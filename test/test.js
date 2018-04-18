@@ -6,11 +6,13 @@ describe("populatron", () => {
     // Setup
     const expected = 561453504;
     // Exercise
-    populatron.totalPopulation((actual) => {
-      // Assert
+    // Moved callback to a named function so I could conceptualize better
+    const test = (actual) => {
       expect(actual).to.equal(expected);
-      // Teardown
+      //Teaf Down
       done();
-    });
+    };
+
+    populatron.totalPopulation("./cities.csv", test);
   });
 });
