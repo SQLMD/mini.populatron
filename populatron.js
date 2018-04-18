@@ -4,7 +4,7 @@ const parse = require("csv-parse");
 module.exports = {
   //added a inputPath paramter because it made it easier for me to see that I was
   //passing paramters from the test.js
-  totalPopulation(inputPath, callback) {
+  totalPopulation(callback, inputPath = "./cities.csv") {
     fs.readFile(inputPath, "utf8", function(err, data) {
       if (err) {
         return 0;
